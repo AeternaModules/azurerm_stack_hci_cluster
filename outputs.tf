@@ -1,3 +1,7 @@
+output "stack_hci_clusters_id" {
+  description = "Map of id values across all stack_hci_clusters, keyed the same as var.stack_hci_clusters"
+  value       = { for k, v in azurerm_stack_hci_cluster.stack_hci_clusters : k => v.id }
+}
 output "stack_hci_clusters_automanage_configuration_id" {
   description = "Map of automanage_configuration_id values across all stack_hci_clusters, keyed the same as var.stack_hci_clusters"
   value       = { for k, v in azurerm_stack_hci_cluster.stack_hci_clusters : k => v.automanage_configuration_id }
